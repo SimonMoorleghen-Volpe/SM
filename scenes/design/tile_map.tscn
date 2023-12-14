@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://drabghcxyvqge"]
+
+[ext_resource type="Texture2D" uid="uid://cji0ghnnl7riu" path="res://assets/pureBlack.png" id="1_ykftu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0v76n"]
+texture = ExtResource("1_ykftu")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bwbeu"]
+sources/0 = SubResource("TileSetAtlasSource_0v76n")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_bwbeu")
+format = 2
