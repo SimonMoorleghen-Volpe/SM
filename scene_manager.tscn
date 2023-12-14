@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://ka17bsrdji8f"]
+[gd_scene load_steps=2 format=3 uid="uid://ka17bsrdji8f"]
 
-[node name="SceneManager" type="Node"]
+[ext_resource type="Script" path="res://scripts/master/scene_manager.cs" id="1_ykkr5"]
+
+[node name="scene_manager" type="Node"]
+script = ExtResource("1_ykkr5")
+starter_scene = "res://scenes/entity/player/player.tscn"

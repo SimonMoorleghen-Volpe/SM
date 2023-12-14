@@ -20,22 +20,27 @@ public partial class Input_Buffer : Node
     }
 
 	public void Add_Input(InputEvent input){
-		if(input_queue.Peek().IsMatch(input)){return;}
+		if(!input.IsActionType()){	return;	}
+		if(input_queue.Count != 0){
+			if(input_queue.Peek().IsMatch(input)){return;}
+		}
+		
 		input_queue.Enqueue(input);
 		buffer_timer.Start();
 	}
 
 	public void Pop_Input(){
-		if(input_queue.Count() == 0){return;}
+		if(input_queue.Count == 0){return;}
 		input_queue.Dequeue();
 	}
 
 	public InputEvent Check_Queue(){
-		if(input_queue.Count() == 0){return null;}
+		if(input_queue.Count == 0){return null;}
 		return input_queue.Peek();
 	}
 
 	public void Clear(){
+
 		input_queue.Clear();
 	}
 

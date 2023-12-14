@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dttdowqahx2ek"]
+[gd_scene load_steps=8 format=3 uid="uid://dttdowqahx2ek"]
 
 [ext_resource type="Texture2D" uid="uid://dotgapqm75ctj" path="res://assets/purePurple.png" id="1_p4ac7"]
+[ext_resource type="Script" path="res://scripts/Player/Player.cs" id="1_tkgwd"]
 [ext_resource type="Script" path="res://scripts/Player/Input_Buffer.cs" id="2_3ecyn"]
 [ext_resource type="PackedScene" uid="uid://b300vwtdnwtkm" path="res://scenes/entity/statemanager.tscn" id="3_4yc36"]
 [ext_resource type="Script" path="res://scripts/Player/Player_Idle.cs" id="4_wbekn"]
@@ -10,6 +11,7 @@
 radius = 8.0
 
 [node name="player" type="CharacterBody2D"]
+script = ExtResource("1_tkgwd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_p4ac7")
@@ -20,12 +22,15 @@ shape = SubResource("CircleShape2D_ioqro")
 [node name="input_buffer" type="Node" parent="."]
 script = ExtResource("2_3ecyn")
 
-[node name="statemanager" parent="." instance=ExtResource("3_4yc36")]
+[node name="state_manager" parent="." instance=ExtResource("3_4yc36")]
 
-[node name="idle" type="Node" parent="statemanager"]
+[node name="idle" type="Node" parent="state_manager"]
 script = ExtResource("4_wbekn")
 State_ID = "idle"
 Default = true
 
-[node name="fall" type="Node" parent="statemanager"]
+[node name="fall" type="Node" parent="state_manager"]
 script = ExtResource("5_smubr")
+Fall_Acceleration = 1500.0
+Fall_Max_Speed = 600.0
+State_ID = "fall"
