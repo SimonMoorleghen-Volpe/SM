@@ -4,7 +4,10 @@ using System.IO;
 
 public partial class scene_manager : Node
 {
-	// Called when the node enters the scene tree for the first time.
+	
+	/// <summary>
+	/// Called when the node is ready to be used. This is where initialization code should be placed.
+	/// </summary>
 	public override void _Ready()
 	{
 		if(starter_scene == null){
@@ -15,6 +18,10 @@ public partial class scene_manager : Node
 		AddChild(current_scene);
 	}
 
+	/// <summary>
+	/// Changes the current scene to the specified scene path.
+	/// </summary>
+	/// <param name="NewScenePath">The path of the new scene to load.</param>
 	public void Change_Scene(string NewScenePath){
 		if(!File.Exists(NewScenePath)){
 			return;
@@ -26,8 +33,14 @@ public partial class scene_manager : Node
 
 
 
+	/// <summary>
+	/// The current scene node.
+	/// </summary>
 	private Node current_scene;
 
+	/// <summary>
+	/// The path to the starter scene.
+	/// </summary>
 	[Export(PropertyHint.File)]
 	private string starter_scene = null;
 

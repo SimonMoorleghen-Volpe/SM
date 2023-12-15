@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+/// <summary>
+/// Represents the player movement state.
+/// </summary>
 public partial class Player_Move : Entity_State
 {
 	// Called when the node enters the scene tree for the first time.
@@ -8,8 +11,8 @@ public partial class Player_Move : Entity_State
 	{
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+    public override string Process(double delta)
+    {
+		return null;
+    }
 }
