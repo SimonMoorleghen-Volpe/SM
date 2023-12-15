@@ -27,8 +27,6 @@ public partial class State_Manager : Node
 		if(input_string == null){ return false;}
 		Change_State(input_string);
 		return true;
-		
-		
 	}
 
 	public void Process(double delta){

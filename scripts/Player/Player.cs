@@ -9,6 +9,7 @@ public partial class Player : Entity
 	{
 		State_Manager = GetNode<State_Manager>("state_manager");
 		input_Buffer = GetNode<Input_Buffer>("input_buffer");
+		MoveAndSlide();
 	}
 
 	
@@ -16,6 +17,7 @@ public partial class Player : Entity
 	{
 		State_Manager.Input(input_Buffer.Check_Queue());
 		State_Manager.Process(delta);
+		Move();
 	}
 
 	public override void _Input(InputEvent @event)

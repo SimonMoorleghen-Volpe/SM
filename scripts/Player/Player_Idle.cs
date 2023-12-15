@@ -11,7 +11,9 @@ public partial class Player_Idle : Entity_State
         if(Input.IsActionPressed("move_left") || Input.IsActionPressed("move_right")){
             return "move";
         }
-
+        if(!entity.IsOnFloor()){
+            return "fall";
+        }
         return null;
     }
 

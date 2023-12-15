@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dttdowqahx2ek"]
+[gd_scene load_steps=9 format=3 uid="uid://dttdowqahx2ek"]
 
 [ext_resource type="Texture2D" uid="uid://dotgapqm75ctj" path="res://assets/purePurple.png" id="1_p4ac7"]
 [ext_resource type="Script" path="res://scripts/Player/Player.cs" id="1_tkgwd"]
@@ -6,14 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://b300vwtdnwtkm" path="res://scenes/entity/statemanager.tscn" id="3_4yc36"]
 [ext_resource type="Script" path="res://scripts/Player/Player_Idle.cs" id="4_wbekn"]
 [ext_resource type="Script" path="res://scenes/entity/player/Player_Fall.cs" id="5_smubr"]
+[ext_resource type="Script" path="res://scripts/Player/Player_Move.cs" id="7_pq126"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ioqro"]
-radius = 8.0
+radius = 25.02
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_tkgwd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(3.125, 3.125)
 texture = ExtResource("1_p4ac7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -31,6 +34,10 @@ Default = true
 
 [node name="fall" type="Node" parent="state_manager"]
 script = ExtResource("5_smubr")
-Fall_Acceleration = 1500.0
-Fall_Max_Speed = 600.0
+Fall_Acceleration = 100.0
+Fall_Max_Speed = 50.0
 State_ID = "fall"
+
+[node name="move" type="Node" parent="state_manager"]
+script = ExtResource("7_pq126")
+State_ID = "move"
