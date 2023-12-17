@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo2jv2oeur13p"]
+
+[ext_resource type="Script" path="res://scenes/UI elements/scene_button.cs" id="1_jiaxs"]
+
+[node name="scene_button" type="Button"]
+script = ExtResource("1_jiaxs")
